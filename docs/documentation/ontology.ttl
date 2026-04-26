@@ -1,0 +1,600 @@
+@prefix : <https://w3id.org/meddevont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/meddevont#> .
+
+<https://w3id.org/meddevont> rdf:type owl:Ontology ;
+                              rdfs:comment "Ontology for the European catalogue of high risk medical devices under MDR and IVDR regulations" ;
+                              rdfs:label "MedDevOnt: Medical Device Ontology" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:comment "Relates a device to its manufacturer" ;
+                      rdfs:label "has manufacturer" .
+
+
+###  https://w3id.org/meddevont#addressesIncident
+:addressesIncident rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:comment "Relates a corrective action to the incident it addresses" ;
+                   rdfs:label "addresses incident" .
+
+
+###  https://w3id.org/meddevont#affectsDevice
+:affectsDevice rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :FSCA ;
+               rdfs:range :Device ;
+               rdfs:comment "Relates a corrective action to the device it affects" ;
+               rdfs:label "affects device" .
+
+
+###  https://w3id.org/meddevont#hasAssociatedRisk
+:hasAssociatedRisk rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:comment "Relates an incident to its identified risk" ;
+                   rdfs:label "has associated risk" .
+
+
+###  https://w3id.org/meddevont#hasManufacturer
+:hasManufacturer rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/meddevont#involvesDevice
+:involvesDevice rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:comment "Relates an incident to the device involved" ;
+                rdfs:label "involves device" .
+
+
+###  https://w3id.org/meddevont#reportedBy
+:reportedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:comment "Relates an incident to the reporting manufacturer" ;
+            rdfs:label "reported by" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/meddevont#actionDate
+:actionDate rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :FSCA ;
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "Date the corrective action was initiated" ;
+            rdfs:label "action date" .
+
+
+###  https://w3id.org/meddevont#country
+:country rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Manufacturer ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Country where the manufacturer is based" ;
+         rdfs:label "country" .
+
+
+###  https://w3id.org/meddevont#deviceName
+:deviceName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Device ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Commercial name of the medical device" ;
+            rdfs:label "device name" .
+
+
+###  https://w3id.org/meddevont#devicesAffected
+:devicesAffected rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :FSCA ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Number or description of devices affected by the action" ;
+                 rdfs:label "devices affected" .
+
+
+###  https://w3id.org/meddevont#eudamedSRN
+:eudamedSRN rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Manufacturer ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Single Registration Number in EUDAMED" ;
+            rdfs:label "EUDAMED SRN" .
+
+
+###  https://w3id.org/meddevont#imdrfCode
+:imdrfCode rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Risk ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Risk code according to IMDRF nomenclature" ;
+           rdfs:label "IMDRF code" .
+
+
+###  https://w3id.org/meddevont#isIVD
+:isIVD rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :Device ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "Indicates whether the device is an in vitro diagnostic" ;
+       rdfs:label "is IVD" .
+
+
+###  https://w3id.org/meddevont#isImplantable
+:isImplantable rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Device ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Indicates whether the device is implantable" ;
+               rdfs:label "is implantable" .
+
+
+###  https://w3id.org/meddevont#manufacturerName
+:manufacturerName rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :Manufacturer ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Legal name of the manufacturer" ;
+                  rdfs:label "manufacturer name" .
+
+
+###  https://w3id.org/meddevont#outcome
+:outcome rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Incident ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Clinical outcome of the incident" ;
+         rdfs:label "outcome" .
+
+
+###  https://w3id.org/meddevont#probability
+:probability rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Risk ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Probability level of the risk: Low, Medium or High" ;
+             rdfs:label "probability level" .
+
+
+###  https://w3id.org/meddevont#reportDate
+:reportDate rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Incident ;
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "Date the incident was reported" ;
+            rdfs:label "report date" .
+
+
+###  https://w3id.org/meddevont#riskClass
+:riskClass rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Device ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Risk classification under MDR or IVDR" ;
+           rdfs:label "risk class" .
+
+
+###  https://w3id.org/meddevont#severity
+:severity rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Risk ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Severity level of the risk: Critical, Serious or Moderate" ;
+          rdfs:label "severity level" .
+
+
+###  https://w3id.org/meddevont#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :FSCA ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Current status of the corrective action: Open or Closed" ;
+        rdfs:label "action status" .
+
+
+###  https://w3id.org/meddevont#udiDI
+:udiDI rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :Device ;
+       rdfs:range xsd:string ;
+       rdfs:comment "Unique Device Identifier - Device Identifier" ;
+       rdfs:label "UDI-DI" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/meddevont#ActiveDevice
+:ActiveDevice rdf:type owl:Class ;
+              rdfs:subClassOf :Device ;
+              rdfs:comment "A medical device that requires a source of electrical energy to function"@en ;
+              rdfs:label "Active Device"@en .
+
+
+###  https://w3id.org/meddevont#ActiveImplant
+:ActiveImplant rdf:type owl:Class ;
+               rdfs:subClassOf :Device ;
+               rdfs:comment "An implantable device with active electronic components" ;
+               rdfs:label "Active Implant" .
+
+
+###  https://w3id.org/meddevont#CybersecurityRisk
+:CybersecurityRisk rdf:type owl:Class ;
+                   rdfs:subClassOf :Risk ;
+                   rdfs:comment "Risk of unauthorized access or cyberattack on a medical device" ;
+                   rdfs:label "Cybersecurity Risk" .
+
+
+###  https://w3id.org/meddevont#Device
+:Device rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasManufacturer ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Manufacturer
+                        ] ;
+        rdfs:comment "A medical device registered under EU MDR or IVDR regulations"@en ;
+        rdfs:label "Medical Device"@en ;
+        rdfs:seeAlso <http://dbpedia.org/resource/Medical_device> .
+
+
+###  https://w3id.org/meddevont#DiagnosticRisk
+:DiagnosticRisk rdf:type owl:Class ;
+                rdfs:subClassOf :Risk ;
+                rdfs:comment "Risk of incorrect diagnostic results from an IVD device" ;
+                rdfs:label "Diagnostic Risk" .
+
+
+###  https://w3id.org/meddevont#FSCA
+:FSCA rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :addressesIncident ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Incident
+                      ] ;
+      rdfs:comment "A corrective action taken by a manufacturer to address a safety issue" ;
+      rdfs:label "Field Safety Corrective Action" ;
+      rdfs:seeAlso <http://dbpedia.org/resource/Corrective_and_preventive_action> .
+
+
+###  https://w3id.org/meddevont#IVDR
+:IVDR rdf:type owl:Class ;
+      rdfs:subClassOf :RegulatoryFramework ;
+      rdfs:comment "EU Regulation 2017/746 on in vitro diagnostic medical devices" ;
+      rdfs:label "In Vitro Diagnostic Regulation" .
+
+
+###  https://w3id.org/meddevont#ImplantableActiveDevice
+:ImplantableActiveDevice rdf:type owl:Class ;
+                         rdfs:subClassOf :Device ;
+                         rdfs:comment "An active device intended to be implanted in the human body" ;
+                         rdfs:label "Implantable Active Device" .
+
+
+###  https://w3id.org/meddevont#ImplantableDevice
+:ImplantableDevice rdf:type owl:Class ;
+                   rdfs:subClassOf :Device ;
+                   rdfs:comment "A device intended to be implanted in the human body" ;
+                   rdfs:label "Implantable Device" .
+
+
+###  https://w3id.org/meddevont#InSituCorrection
+:InSituCorrection rdf:type owl:Class ;
+                  rdfs:subClassOf :FSCA ;
+                  rdfs:comment "On site modification or update of a device to address a safety issue" ;
+                  rdfs:label "In Situ Correction" .
+
+
+###  https://w3id.org/meddevont#InVitroDiagnosticDevice
+:InVitroDiagnosticDevice rdf:type owl:Class ;
+                         rdfs:subClassOf :Device ;
+                         rdfs:comment "A device used for in vitro examination of specimens from the human body" ;
+                         rdfs:label "In Vitro Diagnostic Device" .
+
+
+###  https://w3id.org/meddevont#Incident
+:Incident rdf:type owl:Class ;
+          rdfs:comment "A safety incident reported in relation to a medical device" ;
+          rdfs:label "Incident" .
+
+
+###  https://w3id.org/meddevont#InfectionRisk
+:InfectionRisk rdf:type owl:Class ;
+               rdfs:subClassOf :Risk ;
+               rdfs:comment "Risk of device-related infection" ;
+               rdfs:label "Infection Risk" .
+
+
+###  https://w3id.org/meddevont#InjuryRisk
+:InjuryRisk rdf:type owl:Class ;
+            rdfs:subClassOf :Risk ;
+            rdfs:comment "Risk of physical injury to the patient" ;
+            rdfs:label "Injury Risk" .
+
+
+###  https://w3id.org/meddevont#MDR
+:MDR rdf:type owl:Class ;
+     rdfs:subClassOf :RegulatoryFramework ;
+     rdfs:comment "EU Regulation 2017/745 on medical devices" ;
+     rdfs:label "Medical Device Regulation" .
+
+
+###  https://w3id.org/meddevont#MalfunctionRisk
+:MalfunctionRisk rdf:type owl:Class ;
+                 rdfs:subClassOf :Risk ;
+                 rdfs:comment "Risk related to device malfunction or failure" ;
+                 rdfs:label "Malfunction Risk" .
+
+
+###  https://w3id.org/meddevont#Manufacturer
+:Manufacturer rdf:type owl:Class ;
+              rdfs:comment "Organization responsible for the design and production of a medical device" ;
+              rdfs:label "Manufacturer" .
+
+
+###  https://w3id.org/meddevont#NearMissIncident
+:NearMissIncident rdf:type owl:Class ;
+                  rdfs:subClassOf :Incident ;
+                  rdfs:comment "An incident that could have led to harm but was detected before affecting the patient" ;
+                  rdfs:label "Near Miss Incident" .
+
+
+###  https://w3id.org/meddevont#Recall
+:Recall rdf:type owl:Class ;
+        rdfs:subClassOf :FSCA ;
+        rdfs:comment "Removal of a medical device from the market or from use" ;
+        rdfs:label "Recall" .
+
+
+###  https://w3id.org/meddevont#RegulatoryFramework
+:RegulatoryFramework rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :involvesDevice ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Device
+                                     ] ;
+                     rdfs:comment "European regulatory framework governing medical devices" ;
+                     rdfs:label "Regulatory Framework" .
+
+
+###  https://w3id.org/meddevont#Risk
+:Risk rdf:type owl:Class ;
+      rdfs:comment "An identified risk associated with a medical device according to IMDRF nomenclature" ;
+      rdfs:label "Risk" .
+
+
+###  https://w3id.org/meddevont#SafetyAlert
+:SafetyAlert rdf:type owl:Class ;
+             rdfs:subClassOf :FSCA ;
+             rdfs:comment "Communication to users about a safety issue with a device" ;
+             rdfs:label "Safety Alert" .
+
+
+###  https://w3id.org/meddevont#SelfTestDevice
+:SelfTestDevice rdf:type owl:Class ;
+                rdfs:subClassOf :Device ;
+                rdfs:comment "An IVD device intended to be used by patients for self-testing" ;
+                rdfs:label "Self Test Device" .
+
+
+###  https://w3id.org/meddevont#SeriousIncident
+:SeriousIncident rdf:type owl:Class ;
+                 rdfs:subClassOf :Incident ;
+                 rdfs:comment "An incident that led to death, serious injury or serious public health threat" ;
+                 rdfs:label "Serious Incident" .
+
+
+###  https://w3id.org/meddevont#SingleUseDevice
+:SingleUseDevice rdf:type owl:Class ;
+                 rdfs:subClassOf :Device ;
+                 rdfs:comment "A device intended to be used once and then discarded" ;
+                 rdfs:label "Single Use Device" .
+
+
+###  https://w3id.org/meddevont#SoftwareRisk
+:SoftwareRisk rdf:type owl:Class ;
+              rdfs:subClassOf :Risk ;
+              rdfs:comment "Risk related to software malfunction in a medical device" ;
+              rdfs:label "Software Risk" .
+
+
+###  https://w3id.org/meddevont#UserNotice
+:UserNotice rdf:type owl:Class ;
+            rdfs:subClassOf :FSCA ;
+            rdfs:comment "Informational notice sent to device users about safe usage" ;
+            rdfs:label "User Notice" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/meddevont#DEV-001
+:DEV-001 rdf:type owl:NamedIndividual ,
+                  :ImplantableActiveDevice ;
+         :hasManufacturer :MAN-001 ;
+         :deviceName "HeartMate 3 LVAD" ;
+         :isIVD "false"^^xsd:boolean ;
+         :isImplantable "true"^^xsd:boolean ;
+         :riskClass "ClassIII" ;
+         rdfs:comment "Ventricular assist device for end-stage heart failure" ;
+         rdfs:label "HeartMate 3 LVAD" .
+
+
+###  https://w3id.org/meddevont#FSCA-001
+:FSCA-001 rdf:type owl:NamedIndividual ,
+                   :SafetyAlert ;
+          :addressesIncident :INC-001 ;
+          :actionDate "2024-02-01" ;
+          :devicesAffected 850 ;
+          :status "Open" ;
+          rdfs:comment "Safety alert regarding anticoagulation protocol for HeartMate 3" ;
+          rdfs:label "Safety alert FSCA-001" .
+
+
+###  https://w3id.org/meddevont#INC-001
+:INC-001 rdf:type owl:NamedIndividual ,
+                  :SeriousIncident ;
+         :hasAssociatedRisk :RSK-003 ;
+         :involvesDevice :DEV-001 ;
+         :reportedBy :MAN-001 ;
+         :outcome "Embolic stroke requiring hospitalization" ;
+         :reportDate "2024-01-15" ;
+         rdfs:comment "Incident 2024-000001" ,
+                      "Serious incident involving embolic stroke with HeartMate 3 LVAD" .
+
+
+###  https://w3id.org/meddevont#MAN-001
+:MAN-001 rdf:type owl:NamedIndividual ,
+                  :Manufacturer ;
+         :hasManufacturer :MAN-001 ;
+         :country "Ireland" ;
+         :eudamedSRN "SRN-IE-000001" ;
+         :manufacturerName "Medtronic plc" ;
+         rdfs:comment "Medical device manufacturer based in Ireland" ;
+         rdfs:label "Medtronic plc" ;
+         rdfs:seeAlso <http://dbpedia.org/resource/Medtronic> .
+
+
+###  https://w3id.org/meddevont#RSK-003
+:RSK-003 rdf:type owl:NamedIndividual ,
+                  :InjuryRisk ;
+         :imdrfCode "A0201" ;
+         :probability "Low" ;
+         :severity "Critical" ;
+         rdfs:comment "Risk of thrombus formation causing embolic events" ;
+         rdfs:label "Device-related thrombosis" .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#f> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#i> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#d> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#m> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Incident ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :involvesDevice ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#d>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasManufacturer ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#m>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :reportedBy ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#m>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Risk ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :severity ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> "Critical"
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :probability ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> "High"
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :InjuryRisk ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :FSCA ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :addressesIncident ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#i>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :involvesDevice ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#d>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :affectsDevice ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#d>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

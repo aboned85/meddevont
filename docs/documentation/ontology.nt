@@ -1,0 +1,550 @@
+<https://w3id.org/meddevont> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/meddevont> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology for the European catalogue of high risk medical devices under MDR and IVDR regulations" .
+<https://w3id.org/meddevont> <http://www.w3.org/2000/01/rdf-schema#label> "MedDevOnt: Medical Device Ontology" .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2002/07/owl#topObjectProperty
+<http://www.w3.org/2002/07/owl#topObjectProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a device to its manufacturer" .
+<http://www.w3.org/2002/07/owl#topObjectProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has manufacturer" .
+# 
+# https://w3id.org/meddevont#addressesIncident
+<https://w3id.org/meddevont#addressesIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/meddevont#addressesIncident> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/meddevont#addressesIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a corrective action to the incident it addresses" .
+<https://w3id.org/meddevont#addressesIncident> <http://www.w3.org/2000/01/rdf-schema#label> "addresses incident" .
+# 
+# https://w3id.org/meddevont#affectsDevice
+<https://w3id.org/meddevont#affectsDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/meddevont#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/meddevont#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a corrective action to the device it affects" .
+<https://w3id.org/meddevont#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#label> "affects device" .
+# 
+# https://w3id.org/meddevont#hasAssociatedRisk
+<https://w3id.org/meddevont#hasAssociatedRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/meddevont#hasAssociatedRisk> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/meddevont#hasAssociatedRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an incident to its identified risk" .
+<https://w3id.org/meddevont#hasAssociatedRisk> <http://www.w3.org/2000/01/rdf-schema#label> "has associated risk" .
+# 
+# https://w3id.org/meddevont#hasManufacturer
+<https://w3id.org/meddevont#hasManufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/meddevont#hasManufacturer> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# https://w3id.org/meddevont#involvesDevice
+<https://w3id.org/meddevont#involvesDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/meddevont#involvesDevice> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/meddevont#involvesDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an incident to the device involved" .
+<https://w3id.org/meddevont#involvesDevice> <http://www.w3.org/2000/01/rdf-schema#label> "involves device" .
+# 
+# https://w3id.org/meddevont#reportedBy
+<https://w3id.org/meddevont#reportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/meddevont#reportedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/meddevont#reportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an incident to the reporting manufacturer" .
+<https://w3id.org/meddevont#reportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "reported by" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/meddevont#actionDate
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date the corrective action was initiated" .
+<https://w3id.org/meddevont#actionDate> <http://www.w3.org/2000/01/rdf-schema#label> "action date" .
+# 
+# https://w3id.org/meddevont#country
+<https://w3id.org/meddevont#country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#country> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#country> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Manufacturer> .
+<https://w3id.org/meddevont#country> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#country> <http://www.w3.org/2000/01/rdf-schema#comment> "Country where the manufacturer is based" .
+<https://w3id.org/meddevont#country> <http://www.w3.org/2000/01/rdf-schema#label> "country" .
+# 
+# https://w3id.org/meddevont#deviceName
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/2000/01/rdf-schema#comment> "Commercial name of the medical device" .
+<https://w3id.org/meddevont#deviceName> <http://www.w3.org/2000/01/rdf-schema#label> "device name" .
+# 
+# https://w3id.org/meddevont#devicesAffected
+<https://w3id.org/meddevont#devicesAffected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#devicesAffected> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#devicesAffected> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#devicesAffected> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#devicesAffected> <http://www.w3.org/2000/01/rdf-schema#comment> "Number or description of devices affected by the action" .
+<https://w3id.org/meddevont#devicesAffected> <http://www.w3.org/2000/01/rdf-schema#label> "devices affected" .
+# 
+# https://w3id.org/meddevont#eudamedSRN
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Manufacturer> .
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/2000/01/rdf-schema#comment> "Single Registration Number in EUDAMED" .
+<https://w3id.org/meddevont#eudamedSRN> <http://www.w3.org/2000/01/rdf-schema#label> "EUDAMED SRN" .
+# 
+# https://w3id.org/meddevont#imdrfCode
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk code according to IMDRF nomenclature" .
+<https://w3id.org/meddevont#imdrfCode> <http://www.w3.org/2000/01/rdf-schema#label> "IMDRF code" .
+# 
+# https://w3id.org/meddevont#isIVD
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the device is an in vitro diagnostic" .
+<https://w3id.org/meddevont#isIVD> <http://www.w3.org/2000/01/rdf-schema#label> "is IVD" .
+# 
+# https://w3id.org/meddevont#isImplantable
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the device is implantable" .
+<https://w3id.org/meddevont#isImplantable> <http://www.w3.org/2000/01/rdf-schema#label> "is implantable" .
+# 
+# https://w3id.org/meddevont#manufacturerName
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Manufacturer> .
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/2000/01/rdf-schema#comment> "Legal name of the manufacturer" .
+<https://w3id.org/meddevont#manufacturerName> <http://www.w3.org/2000/01/rdf-schema#label> "manufacturer name" .
+# 
+# https://w3id.org/meddevont#outcome
+<https://w3id.org/meddevont#outcome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#outcome> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#outcome> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Incident> .
+<https://w3id.org/meddevont#outcome> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#outcome> <http://www.w3.org/2000/01/rdf-schema#comment> "Clinical outcome of the incident" .
+<https://w3id.org/meddevont#outcome> <http://www.w3.org/2000/01/rdf-schema#label> "outcome" .
+# 
+# https://w3id.org/meddevont#probability
+<https://w3id.org/meddevont#probability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#probability> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#probability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#probability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#probability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#probability> <http://www.w3.org/2000/01/rdf-schema#comment> "Probability level of the risk: Low, Medium or High" .
+<https://w3id.org/meddevont#probability> <http://www.w3.org/2000/01/rdf-schema#label> "probability level" .
+# 
+# https://w3id.org/meddevont#reportDate
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Incident> .
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date the incident was reported" .
+<https://w3id.org/meddevont#reportDate> <http://www.w3.org/2000/01/rdf-schema#label> "report date" .
+# 
+# https://w3id.org/meddevont#riskClass
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk classification under MDR or IVDR" .
+<https://w3id.org/meddevont#riskClass> <http://www.w3.org/2000/01/rdf-schema#label> "risk class" .
+# 
+# https://w3id.org/meddevont#severity
+<https://w3id.org/meddevont#severity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#severity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#severity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#severity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#severity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#severity> <http://www.w3.org/2000/01/rdf-schema#comment> "Severity level of the risk: Critical, Serious or Moderate" .
+<https://w3id.org/meddevont#severity> <http://www.w3.org/2000/01/rdf-schema#label> "severity level" .
+# 
+# https://w3id.org/meddevont#status
+<https://w3id.org/meddevont#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#status> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#status> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#status> <http://www.w3.org/2000/01/rdf-schema#comment> "Current status of the corrective action: Open or Closed" .
+<https://w3id.org/meddevont#status> <http://www.w3.org/2000/01/rdf-schema#label> "action status" .
+# 
+# https://w3id.org/meddevont#udiDI
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique Device Identifier - Device Identifier" .
+<https://w3id.org/meddevont#udiDI> <http://www.w3.org/2000/01/rdf-schema#label> "UDI-DI" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/meddevont#ActiveDevice
+<https://w3id.org/meddevont#ActiveDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#ActiveDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#ActiveDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A medical device that requires a source of electrical energy to function"@en .
+<https://w3id.org/meddevont#ActiveDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Active Device"@en .
+# 
+# https://w3id.org/meddevont#ActiveImplant
+<https://w3id.org/meddevont#ActiveImplant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#ActiveImplant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#ActiveImplant> <http://www.w3.org/2000/01/rdf-schema#comment> "An implantable device with active electronic components" .
+<https://w3id.org/meddevont#ActiveImplant> <http://www.w3.org/2000/01/rdf-schema#label> "Active Implant" .
+# 
+# https://w3id.org/meddevont#CybersecurityRisk
+<https://w3id.org/meddevont#CybersecurityRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#CybersecurityRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#CybersecurityRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of unauthorized access or cyberattack on a medical device" .
+<https://w3id.org/meddevont#CybersecurityRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Cybersecurity Risk" .
+# 
+# https://w3id.org/meddevont#Device
+<https://w3id.org/meddevont#Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/meddevont#Manufacturer> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/meddevont#hasManufacturer> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/meddevont#Device> <http://www.w3.org/2000/01/rdf-schema#comment> "A medical device registered under EU MDR or IVDR regulations"@en .
+<https://w3id.org/meddevont#Device> <http://www.w3.org/2000/01/rdf-schema#label> "Medical Device"@en .
+<https://w3id.org/meddevont#Device> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://dbpedia.org/resource/Medical_device> .
+# 
+# https://w3id.org/meddevont#DiagnosticRisk
+<https://w3id.org/meddevont#DiagnosticRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#DiagnosticRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#DiagnosticRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of incorrect diagnostic results from an IVD device" .
+<https://w3id.org/meddevont#DiagnosticRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnostic Risk" .
+# 
+# https://w3id.org/meddevont#FSCA
+<https://w3id.org/meddevont#FSCA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#FSCA> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/meddevont#Incident> .
+_:genid2 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/meddevont#addressesIncident> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/meddevont#FSCA> <http://www.w3.org/2000/01/rdf-schema#comment> "A corrective action taken by a manufacturer to address a safety issue" .
+<https://w3id.org/meddevont#FSCA> <http://www.w3.org/2000/01/rdf-schema#label> "Field Safety Corrective Action" .
+<https://w3id.org/meddevont#FSCA> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://dbpedia.org/resource/Corrective_and_preventive_action> .
+# 
+# https://w3id.org/meddevont#IVDR
+<https://w3id.org/meddevont#IVDR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#IVDR> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#RegulatoryFramework> .
+<https://w3id.org/meddevont#IVDR> <http://www.w3.org/2000/01/rdf-schema#comment> "EU Regulation 2017/746 on in vitro diagnostic medical devices" .
+<https://w3id.org/meddevont#IVDR> <http://www.w3.org/2000/01/rdf-schema#label> "In Vitro Diagnostic Regulation" .
+# 
+# https://w3id.org/meddevont#ImplantableActiveDevice
+<https://w3id.org/meddevont#ImplantableActiveDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#ImplantableActiveDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#ImplantableActiveDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "An active device intended to be implanted in the human body" .
+<https://w3id.org/meddevont#ImplantableActiveDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Implantable Active Device" .
+# 
+# https://w3id.org/meddevont#ImplantableDevice
+<https://w3id.org/meddevont#ImplantableDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#ImplantableDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#ImplantableDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device intended to be implanted in the human body" .
+<https://w3id.org/meddevont#ImplantableDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Implantable Device" .
+# 
+# https://w3id.org/meddevont#InSituCorrection
+<https://w3id.org/meddevont#InSituCorrection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#InSituCorrection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#InSituCorrection> <http://www.w3.org/2000/01/rdf-schema#comment> "On site modification or update of a device to address a safety issue" .
+<https://w3id.org/meddevont#InSituCorrection> <http://www.w3.org/2000/01/rdf-schema#label> "In Situ Correction" .
+# 
+# https://w3id.org/meddevont#InVitroDiagnosticDevice
+<https://w3id.org/meddevont#InVitroDiagnosticDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#InVitroDiagnosticDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#InVitroDiagnosticDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device used for in vitro examination of specimens from the human body" .
+<https://w3id.org/meddevont#InVitroDiagnosticDevice> <http://www.w3.org/2000/01/rdf-schema#label> "In Vitro Diagnostic Device" .
+# 
+# https://w3id.org/meddevont#Incident
+<https://w3id.org/meddevont#Incident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#Incident> <http://www.w3.org/2000/01/rdf-schema#comment> "A safety incident reported in relation to a medical device" .
+<https://w3id.org/meddevont#Incident> <http://www.w3.org/2000/01/rdf-schema#label> "Incident" .
+# 
+# https://w3id.org/meddevont#InfectionRisk
+<https://w3id.org/meddevont#InfectionRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#InfectionRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#InfectionRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of device-related infection" .
+<https://w3id.org/meddevont#InfectionRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Infection Risk" .
+# 
+# https://w3id.org/meddevont#InjuryRisk
+<https://w3id.org/meddevont#InjuryRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#InjuryRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#InjuryRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of physical injury to the patient" .
+<https://w3id.org/meddevont#InjuryRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Injury Risk" .
+# 
+# https://w3id.org/meddevont#MDR
+<https://w3id.org/meddevont#MDR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#MDR> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#RegulatoryFramework> .
+<https://w3id.org/meddevont#MDR> <http://www.w3.org/2000/01/rdf-schema#comment> "EU Regulation 2017/745 on medical devices" .
+<https://w3id.org/meddevont#MDR> <http://www.w3.org/2000/01/rdf-schema#label> "Medical Device Regulation" .
+# 
+# https://w3id.org/meddevont#MalfunctionRisk
+<https://w3id.org/meddevont#MalfunctionRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#MalfunctionRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#MalfunctionRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk related to device malfunction or failure" .
+<https://w3id.org/meddevont#MalfunctionRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Malfunction Risk" .
+# 
+# https://w3id.org/meddevont#Manufacturer
+<https://w3id.org/meddevont#Manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "Organization responsible for the design and production of a medical device" .
+<https://w3id.org/meddevont#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "Manufacturer" .
+# 
+# https://w3id.org/meddevont#NearMissIncident
+<https://w3id.org/meddevont#NearMissIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#NearMissIncident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Incident> .
+<https://w3id.org/meddevont#NearMissIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "An incident that could have led to harm but was detected before affecting the patient" .
+<https://w3id.org/meddevont#NearMissIncident> <http://www.w3.org/2000/01/rdf-schema#label> "Near Miss Incident" .
+# 
+# https://w3id.org/meddevont#Recall
+<https://w3id.org/meddevont#Recall> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#Recall> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#Recall> <http://www.w3.org/2000/01/rdf-schema#comment> "Removal of a medical device from the market or from use" .
+<https://w3id.org/meddevont#Recall> <http://www.w3.org/2000/01/rdf-schema#label> "Recall" .
+# 
+# https://w3id.org/meddevont#RegulatoryFramework
+<https://w3id.org/meddevont#RegulatoryFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#RegulatoryFramework> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/meddevont#Device> .
+_:genid3 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/meddevont#involvesDevice> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/meddevont#RegulatoryFramework> <http://www.w3.org/2000/01/rdf-schema#comment> "European regulatory framework governing medical devices" .
+<https://w3id.org/meddevont#RegulatoryFramework> <http://www.w3.org/2000/01/rdf-schema#label> "Regulatory Framework" .
+# 
+# https://w3id.org/meddevont#Risk
+<https://w3id.org/meddevont#Risk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#Risk> <http://www.w3.org/2000/01/rdf-schema#comment> "An identified risk associated with a medical device according to IMDRF nomenclature" .
+<https://w3id.org/meddevont#Risk> <http://www.w3.org/2000/01/rdf-schema#label> "Risk" .
+# 
+# https://w3id.org/meddevont#SafetyAlert
+<https://w3id.org/meddevont#SafetyAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#SafetyAlert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#SafetyAlert> <http://www.w3.org/2000/01/rdf-schema#comment> "Communication to users about a safety issue with a device" .
+<https://w3id.org/meddevont#SafetyAlert> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Alert" .
+# 
+# https://w3id.org/meddevont#SelfTestDevice
+<https://w3id.org/meddevont#SelfTestDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#SelfTestDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#SelfTestDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "An IVD device intended to be used by patients for self-testing" .
+<https://w3id.org/meddevont#SelfTestDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Self Test Device" .
+# 
+# https://w3id.org/meddevont#SeriousIncident
+<https://w3id.org/meddevont#SeriousIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#SeriousIncident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Incident> .
+<https://w3id.org/meddevont#SeriousIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "An incident that led to death, serious injury or serious public health threat" .
+<https://w3id.org/meddevont#SeriousIncident> <http://www.w3.org/2000/01/rdf-schema#label> "Serious Incident" .
+# 
+# https://w3id.org/meddevont#SingleUseDevice
+<https://w3id.org/meddevont#SingleUseDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#SingleUseDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Device> .
+<https://w3id.org/meddevont#SingleUseDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device intended to be used once and then discarded" .
+<https://w3id.org/meddevont#SingleUseDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Single Use Device" .
+# 
+# https://w3id.org/meddevont#SoftwareRisk
+<https://w3id.org/meddevont#SoftwareRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#SoftwareRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#Risk> .
+<https://w3id.org/meddevont#SoftwareRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk related to software malfunction in a medical device" .
+<https://w3id.org/meddevont#SoftwareRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Software Risk" .
+# 
+# https://w3id.org/meddevont#UserNotice
+<https://w3id.org/meddevont#UserNotice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/meddevont#UserNotice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/meddevont#FSCA> .
+<https://w3id.org/meddevont#UserNotice> <http://www.w3.org/2000/01/rdf-schema#comment> "Informational notice sent to device users about safe usage" .
+<https://w3id.org/meddevont#UserNotice> <http://www.w3.org/2000/01/rdf-schema#label> "User Notice" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/meddevont#DEV-001
+<https://w3id.org/meddevont#DEV-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/meddevont#DEV-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/meddevont#ImplantableActiveDevice> .
+<https://w3id.org/meddevont#DEV-001> <https://w3id.org/meddevont#hasManufacturer> <https://w3id.org/meddevont#MAN-001> .
+<https://w3id.org/meddevont#DEV-001> <https://w3id.org/meddevont#deviceName> "HeartMate 3 LVAD" .
+<https://w3id.org/meddevont#DEV-001> <https://w3id.org/meddevont#isIVD> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/meddevont#DEV-001> <https://w3id.org/meddevont#isImplantable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/meddevont#DEV-001> <https://w3id.org/meddevont#riskClass> "ClassIII" .
+<https://w3id.org/meddevont#DEV-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Ventricular assist device for end-stage heart failure" .
+<https://w3id.org/meddevont#DEV-001> <http://www.w3.org/2000/01/rdf-schema#label> "HeartMate 3 LVAD" .
+# 
+# https://w3id.org/meddevont#FSCA-001
+<https://w3id.org/meddevont#FSCA-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/meddevont#FSCA-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/meddevont#SafetyAlert> .
+<https://w3id.org/meddevont#FSCA-001> <https://w3id.org/meddevont#addressesIncident> <https://w3id.org/meddevont#INC-001> .
+<https://w3id.org/meddevont#FSCA-001> <https://w3id.org/meddevont#actionDate> "2024-02-01" .
+<https://w3id.org/meddevont#FSCA-001> <https://w3id.org/meddevont#devicesAffected> "850"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/meddevont#FSCA-001> <https://w3id.org/meddevont#status> "Open" .
+<https://w3id.org/meddevont#FSCA-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Safety alert regarding anticoagulation protocol for HeartMate 3" .
+<https://w3id.org/meddevont#FSCA-001> <http://www.w3.org/2000/01/rdf-schema#label> "Safety alert FSCA-001" .
+# 
+# https://w3id.org/meddevont#INC-001
+<https://w3id.org/meddevont#INC-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/meddevont#INC-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/meddevont#SeriousIncident> .
+<https://w3id.org/meddevont#INC-001> <https://w3id.org/meddevont#hasAssociatedRisk> <https://w3id.org/meddevont#RSK-003> .
+<https://w3id.org/meddevont#INC-001> <https://w3id.org/meddevont#involvesDevice> <https://w3id.org/meddevont#DEV-001> .
+<https://w3id.org/meddevont#INC-001> <https://w3id.org/meddevont#reportedBy> <https://w3id.org/meddevont#MAN-001> .
+<https://w3id.org/meddevont#INC-001> <https://w3id.org/meddevont#outcome> "Embolic stroke requiring hospitalization" .
+<https://w3id.org/meddevont#INC-001> <https://w3id.org/meddevont#reportDate> "2024-01-15" .
+<https://w3id.org/meddevont#INC-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Incident 2024-000001" .
+<https://w3id.org/meddevont#INC-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Serious incident involving embolic stroke with HeartMate 3 LVAD" .
+# 
+# https://w3id.org/meddevont#MAN-001
+<https://w3id.org/meddevont#MAN-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/meddevont#MAN-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/meddevont#Manufacturer> .
+<https://w3id.org/meddevont#MAN-001> <https://w3id.org/meddevont#hasManufacturer> <https://w3id.org/meddevont#MAN-001> .
+<https://w3id.org/meddevont#MAN-001> <https://w3id.org/meddevont#country> "Ireland" .
+<https://w3id.org/meddevont#MAN-001> <https://w3id.org/meddevont#eudamedSRN> "SRN-IE-000001" .
+<https://w3id.org/meddevont#MAN-001> <https://w3id.org/meddevont#manufacturerName> "Medtronic plc" .
+<https://w3id.org/meddevont#MAN-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Medical device manufacturer based in Ireland" .
+<https://w3id.org/meddevont#MAN-001> <http://www.w3.org/2000/01/rdf-schema#label> "Medtronic plc" .
+<https://w3id.org/meddevont#MAN-001> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://dbpedia.org/resource/Medtronic> .
+# 
+# https://w3id.org/meddevont#RSK-003
+<https://w3id.org/meddevont#RSK-003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/meddevont#RSK-003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/meddevont#InjuryRisk> .
+<https://w3id.org/meddevont#RSK-003> <https://w3id.org/meddevont#imdrfCode> "A0201" .
+<https://w3id.org/meddevont#RSK-003> <https://w3id.org/meddevont#probability> "Low" .
+<https://w3id.org/meddevont#RSK-003> <https://w3id.org/meddevont#severity> "Critical" .
+<https://w3id.org/meddevont#RSK-003> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of thrombus formation causing embolic events" .
+<https://w3id.org/meddevont#RSK-003> <http://www.w3.org/2000/01/rdf-schema#label> "Device-related thrombosis" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Rules
+# #
+# #################################################################
+# 
+# 
+<urn:swrl:var#f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl:var#i> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl:var#d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl:var#m> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl:var#r> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid13 <http://www.w3.org/2003/11/swrl#body> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
+_:genid15 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#m> .
+_:genid15 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d> .
+_:genid15 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#hasManufacturer> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid17 .
+_:genid17 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#d> .
+_:genid17 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> .
+_:genid17 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#involvesDevice> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid19 .
+_:genid19 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> .
+_:genid19 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/meddevont#Incident> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid13 <http://www.w3.org/2003/11/swrl#head> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid21 .
+_:genid21 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#m> .
+_:genid21 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> .
+_:genid21 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#reportedBy> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid22 <http://www.w3.org/2003/11/swrl#body> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid24 .
+_:genid24 <http://www.w3.org/2003/11/swrl#argument2> "High" .
+_:genid24 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid24 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#probability> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid26 .
+_:genid26 <http://www.w3.org/2003/11/swrl#argument2> "Critical" .
+_:genid26 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid26 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#severity> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid28 .
+_:genid28 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid28 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/meddevont#Risk> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid22 <http://www.w3.org/2003/11/swrl#head> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid30 .
+_:genid30 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> .
+_:genid30 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/meddevont#InjuryRisk> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid4 <http://www.w3.org/2003/11/swrl#body> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid6 .
+_:genid6 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#d> .
+_:genid6 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#i> .
+_:genid6 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#involvesDevice> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid8 .
+_:genid8 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#i> .
+_:genid8 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> .
+_:genid8 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#addressesIncident> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid10 .
+_:genid10 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> .
+_:genid10 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/meddevont#FSCA> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid4 <http://www.w3.org/2003/11/swrl#head> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid12 .
+_:genid12 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#d> .
+_:genid12 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> .
+_:genid12 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/meddevont#affectsDevice> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
